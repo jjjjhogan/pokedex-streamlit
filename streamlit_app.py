@@ -1,6 +1,9 @@
 import streamlit as st
 
-st.title("🎈 My new app")
-st.write(
-    "Let's start building! For help and inspiration, head over to [docs.streamlit.io](https://docs.streamlit.io/)."
-)
+st.title("Pokedex")
+
+if 'pokedex' not in st.session_state:
+    st.session_state['pokedex']= {'pikachu':'data'}
+
+
+st.selectbox('View generated entries',st.session_state['pokedex'].keys())
